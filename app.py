@@ -42,6 +42,15 @@ with st.sidebar:
         st.session_state.chat_id = storage.new_id()
         st.rerun()
 
+    if st.session_state.messages:
+        st.download_button(
+            "⬇️ export chat (.md)",
+            storage.to_markdown(st.session_state.messages),
+            file_name=f"chat-{st.session_state.chat_id}.md",
+            mime="text/markdown",
+            use_container_width=True,
+        )
+
     st.subheader("past chats")
     for chat_id, title in storage.list_chats():
         col1, col2 = st.columns([5, 1])

@@ -11,6 +11,7 @@ I built this because I wanted to use local models for everyday stuff (free, priv
 - switch models mid-chat. The new model sees the whole conversation so far
 - editable system prompt in the sidebar
 - chats are saved automatically and listed in the sidebar so you can reopen or delete them
+- export any chat as a markdown file with one click
 - works with only local models, only cloud models, or both
 
 ## Setup
@@ -57,6 +58,6 @@ It opens at http://localhost:8501. Choose a model in the sidebar and start chatt
 
 - [ ] "auto" mode that sends easy questions to the local model and hard ones to the cloud
 - [ ] show response time and token count under each answer
-- [ ] export a chat as markdown
+- [x] export a chat as markdown
 - [ ] upload a file and chat about it
 - [ ] Gemini support

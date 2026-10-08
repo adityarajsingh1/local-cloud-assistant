@@ -44,3 +44,13 @@ def list_chats():
 
 def delete(chat_id):
     (CHAT_DIR / f"{chat_id}.json").unlink(missing_ok=True)
+
+
+def to_markdown(messages):
+    """Turn a chat into a readable markdown doc, for the download button."""
+    title = messages[0]["content"][:60] if messages else "empty chat"
+    lines = [f"# {title}", ""]
+    for msg in messages:
+        who = "**You**" if msg["role"] == "user" else "**Assistant**"
+        lines += [who, "", msg["content"], ""]
+    return "\n".join(lines)
